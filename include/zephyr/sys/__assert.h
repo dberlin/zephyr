@@ -96,6 +96,7 @@ void assert_post_action(const char *file, unsigned int line);
 		if (!(test)) {                                            \
 			__ASSERT_LOC(test);                               \
 			__ASSERT_POST_ACTION();                           \
+			CODE_UNREACHABLE;                                 \
 		}                                                         \
 	} while (false)
 
@@ -105,6 +106,7 @@ void assert_post_action(const char *file, unsigned int line);
 			__ASSERT_LOC(test);                               \
 			__ASSERT_MSG_INFO(fmt, ##__VA_ARGS__);            \
 			__ASSERT_POST_ACTION();                           \
+			CODE_UNREACHABLE;                                 \
 		}                                                         \
 	} while (false)
 
