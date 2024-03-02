@@ -25,6 +25,8 @@ manifest:
       url-base: https://github.com/BabbleSim
     - name: zpp
       url-base: https://github.com/lowlander
+    - name: vglite
+      url-base: https://github.com/dberlin
 
   group-filter: [-babblesim, -optional]
 
@@ -343,6 +345,10 @@ manifest:
       remote: zpp
       revision: master
       path: modules/zpp
+    - name: vglite_zephyr
+      remote: vglite
+      revision: main
+      path: modules/vglite
 
   self:
     path: zephyr
