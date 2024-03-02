@@ -343,9 +343,11 @@ manifest:
       path: modules/lib/zcbor
     - name: zpp
       remote: zpp
+      repo-path: zpp
       revision: master
       path: modules/zpp
-    - name: vglite_zephyr
+    - name: vglite
+      repo-path: vglite_zephyr
       remote: vglite
       revision: main
       path: modules/vglite
