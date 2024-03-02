@@ -25,7 +25,7 @@ manifest:
       url-base: https://github.com/BabbleSim
     - name: zpp
       url-base: https://github.com/lowlander
-    - name: vglite
+    - name: dberlin
       url-base: https://github.com/dberlin
 
   group-filter: [-babblesim, -optional]
@@ -197,7 +197,9 @@ manifest:
       groups:
         - hal
     - name: hal_nxp
-      revision: c5a56361f3e4968a4d1eaa6f91761550b7d81e70
+      revision: manifest-rev
+      repo-path: hal_nxp
+      remote: dberlin
       path: modules/hal/nxp
       groups:
         - hal
@@ -348,7 +350,7 @@ manifest:
       path: modules/zpp
     - name: vglite
       repo-path: vglite_zephyr
-      remote: vglite
+      remote: dberlin
       revision: main
       path: modules/vglite
 
