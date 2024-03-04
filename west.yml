@@ -349,12 +349,12 @@ manifest:
       remote: zpp
       repo-path: zpp
       revision: master
-      path: modules/zpp
+      path: modules/lib/zpp
     - name: vglite
       repo-path: vglite_zephyr
       remote: dberlin
       revision: main
-      path: modules/vglite
+      path: modules/lib/vglite
 
   self:
     path: zephyr
