@@ -17,7 +17,7 @@ zephyr_include_directories(include)
 
 zephyr_compile_definitions(LV_CONF_INCLUDE_SIMPLE=1)
 zephyr_compile_definitions(LV_CONF_PATH=${CMAKE_CURRENT_SOURCE_DIR}/include/lv_conf.h)
-zephyr_compile_definitions(SDK_OS_ZEPHYR=1)
+zephyr_library_compile_definitions(SDK_OS_ZEPHYR=1)
 
 zephyr_library_sources(
     ${LVGL_DIR}/src/core/lv_disp.c

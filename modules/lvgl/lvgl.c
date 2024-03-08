@@ -193,7 +193,11 @@ static int lvgl_allocate_rendering_buffers(lv_disp_drv_t *disp_driver)
 	return 0;
 }
 #endif /* CONFIG_LV_Z_BUFFER_ALLOC_STATIC */
+#ifdef CONFIG_LV_USE_GPU_NXP_PXP_AUTO_INIT
+extern void PXP_IRQHandler(void);
 
+void PXP_ZephyrIRQHandler(void *) { PXP_IRQHandler(); }
+#endif
 static int lvgl_init(void)
 {
 	const struct device *display_dev = DEVICE_DT_GET(DISPLAY_NODE);
@@ -204,6 +208,10 @@ static int lvgl_init(void)
 		LOG_ERR("Display device not ready.");
 		return -ENODEV;
 	}
+#ifdef CONFIG_LV_USE_GPU_NXP_PXP_AUTO_INIT
+	IRQ_CONNECT(DT_IRQN(DT_NODELABEL(pxp)), 2, PXP_ZephyrIRQHandler, NULL, 0);
+	irq_enable(DT_IRQN(DT_NODELABEL(pxp)));
+#endif
 
 #ifdef CONFIG_LV_Z_MEM_POOL_SYS_HEAP
 	lvgl_heap_init();
