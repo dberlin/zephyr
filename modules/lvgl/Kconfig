@@ -18,6 +18,12 @@ config LV_USE_MONKEY
 config LV_DPI_DEF
 	int
 
+config LV_USE_PXP
+    bool "Use PXP acceleration"
+    depends on DT_HAS_NXP_PXP_ENABLED
+    select LV_USE_GPU_NXP_PXP
+    select LV_USE_GPU_NXP_PXP_AUTO_INIT
+
 config LV_CONF_SKIP
 	bool
 	default n
